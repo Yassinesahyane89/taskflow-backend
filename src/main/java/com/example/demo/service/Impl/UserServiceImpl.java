@@ -70,7 +70,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User deleteUser(Long userId) {
-        return null;
+    public void deleteUser(Long userId) {
+        // Check if the user exists
+        getUserById(userId);
+
+        userRepository.deleteById(userId);
     }
 }

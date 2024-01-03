@@ -13,5 +13,5 @@ public interface UserService {
     User getUserByEmail(String email);
     public void changePassword(Long userId, String newPassword, String confirmNewPassword);
     List<User> searchUsers(String keyword);
-    User deleteUser(Long userId);
+    void deleteUser(Long userId);
 }
