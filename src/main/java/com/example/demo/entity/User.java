@@ -43,6 +43,9 @@ public class User implements UserDetails {
     @ManyToMany(mappedBy = "users")
     private List<Role> roles;
 
+    @OneToMany(mappedBy = "user")
+    private List<Token> tokens;
+
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
