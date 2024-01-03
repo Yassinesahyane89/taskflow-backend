@@ -25,13 +25,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserById(Long userId) {
+        return userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User not found"));
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    @Override
     public User updateUser(User user, Principal principal) {
         return null;
     }
 
     @Override
     public User getUserByEmail(String email) {
-        return null;
+        return userRepository.findByEmail(email).orElseThrow(() -> new UserNotFoundException("User not found"));
     }
 
     @Override
@@ -60,7 +70,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User deleteUser(Principal principal) {
+    public User deleteUser(Long userId) {
         return null;
     }
 }
