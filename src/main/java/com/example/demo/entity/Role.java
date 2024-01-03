@@ -27,6 +27,12 @@ public class Role {
 
     private String description;
 
+    @ManyToMany
+    List<User> users;
+
+    @ManyToMany
+    List<Permission> permissions;
+
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)

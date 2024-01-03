@@ -39,6 +39,9 @@ public class User implements UserDetails {
 
     private LocalDate lastLoginDate;
 
+    @ManyToMany(mappedBy = "users")
+    private List<Role> roles;
+
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)

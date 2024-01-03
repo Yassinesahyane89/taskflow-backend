@@ -29,6 +29,9 @@ public class Permission {
 
     private String description;
 
+    @ManyToMany(mappedBy = "permissions")
+    List<Role> roles;
+
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
