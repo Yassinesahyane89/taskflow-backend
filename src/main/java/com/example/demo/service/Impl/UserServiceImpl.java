@@ -20,11 +20,6 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public User saveUser(User user) {
-        return null;
-    }
-
-    @Override
     public User getUserById(Long userId) {
         return userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User not found"));
     }
@@ -35,7 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(User user, Principal principal) {
+    public User updateUser(User user, Long userId) {
         return null;
     }
 
